@@ -6,13 +6,20 @@
 
 (defn- coord [val] (long (* val 1000000.0)))
 
+(defn- fmt6
+  "Portable fixed 6-decimal-place formatting (clojure.core/format wraps
+  java.util.Formatter -- JVM-only, no cljs equivalent)."
+  [n]
+  #?(:clj (format "%.6f" (double n))
+     :cljs (.toFixed n 6)))
+
 (defn- aperture-line [id {:keys [kind diameter width height]}]
   (case kind
-    :circle (str "%ADD" id "C," (format "%.6f" (double diameter)) "*%\n")
-    :rectangle (str "%ADD" id "R," (format "%.6f" (double width)) "X"
-                     (format "%.6f" (double height)) "*%\n")
-    :obround (str "%ADD" id "O," (format "%.6f" (double width)) "X"
-                    (format "%.6f" (double height)) "*%\n")))
+    :circle (str "%ADD" id "C," (fmt6 diameter) "*%\n")
+    :rectangle (str "%ADD" id "R," (fmt6 width) "X"
+                     (fmt6 height) "*%\n")
+    :obround (str "%ADD" id "O," (fmt6 width) "X"
+                    (fmt6 height) "*%\n")))
 
 (defn- command-lines [{:keys [cmd id x y i j]}]
   (case cmd

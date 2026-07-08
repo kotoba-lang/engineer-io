@@ -11,7 +11,7 @@
 
 (deftest namespace-loads
   (testing "the restored CLJC namespace loads"
-    (is (some? (the-ns 'engineer-io)))))
+    (is (some? (find-ns 'engineer-io)))))
 
 ;; mirrors `format_detection`
 (deftest format-detection
