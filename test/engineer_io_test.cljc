@@ -2,7 +2,7 @@
   "Restoration-fidelity tests — one per original kami-eng-io Rust test
   (kami-engine/kami-eng-io/src/lib.rs `mod tests`, deleted PR #82)."
   (:require [clojure.test :refer [deftest is testing]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [engineer-io]
             [engineer-io.format :as format]
             [engineer-io.stl :as stl]

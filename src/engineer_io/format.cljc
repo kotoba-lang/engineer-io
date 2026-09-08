@@ -2,7 +2,7 @@
   "Supported engineering file formats + extension/mime-type/detection.
   Restored from kami-eng-io's `FileFormat` enum (kami-engine/kami-eng-io/
   src/lib.rs, deleted PR #82)."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (def formats
   "All supported formats as keywords, grouped by domain in the original enum
@@ -66,4 +66,4 @@
   "Detect a format keyword from a file extension string (case-insensitive,
   no leading dot). Returns nil if unrecognized."
   [ext]
-  (get extension->format (str/lower-case ext)))
+  (get extension->format (str/lower ext)))
