@@ -1,5 +1,5 @@
 (ns engineer-io.step
-  ;; Parity guest for src/engineer_io/step.cljc (STEP AP214 header/footer
+  ;; Parity guest for src/engineer_io/step.cljk (STEP AP214 header/footer
   ;; generator, AP214 subset). Same two exports, same strings, byte for byte:
   ;; the .cljc stays the oracle until a human retires it. Portable pure --
   ;; string concatenation only, no capabilities, no host boundary.

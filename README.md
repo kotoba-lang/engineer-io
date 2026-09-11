@@ -21,7 +21,7 @@ Depends on `kotoba-lang/engineer` for shared contracts (constraint/DRC/etc).
 
 Restored — all 4 modules ported from the original 314-line Rust `lib.rs`,
 with all 4 original Rust unit tests mirrored 1:1 in
-`test/engineer_io_test.cljc`. `stl/export-binary` is JVM-only
+`test/engineer_io_test.cljk`. `stl/export-binary` is JVM-only
 (`#?(:clj ...)`, uses `java.nio.ByteBuffer`); a CLJS arm can be added if a
 browser consumer needs binary STL export.
 
