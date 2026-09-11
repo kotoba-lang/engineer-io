@@ -28,5 +28,5 @@ browser consumer needs binary STL export.
 ## Develop
 
 ```bash
-clojure -M:test
+kbb -M:test
 ```
