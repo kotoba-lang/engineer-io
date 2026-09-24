@@ -10,7 +10,7 @@
   test does; nothing in :paths depends on either — the deps are test-only
   and the codec stays dependency-free."
   (:require [clojure.java.io :as io]
-            [clojure.test :refer [deftest is testing]]
+            [kotoba.test :refer [deftest is testing]]
             [kotoba.compiler.core :as compiler]
             [kotoba.kir :as kir]
             [engineer-io.step :as step]))
