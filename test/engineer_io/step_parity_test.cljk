@@ -9,7 +9,7 @@
   kotoba-kir reference runtime, exactly as org-ietf-sip's reader parity
   test does; nothing in :paths depends on either — the deps are test-only
   and the codec stays dependency-free."
-  (:require [clojure.java.io :as io]
+  (:require [kotoba.io :as io]
             [kotoba.test :refer [deftest is testing]]
             [kotoba.compiler.core :as compiler]
             [kotoba.kir :as kir]
@@ -34,7 +34,7 @@
        "ENDSEC;\nDATA;\n"))
 
 (deftest guest-source-is-present
-  (is (.exists guest-file) (str "guest not found at " guest-file)))
+  (is (io/exists? guest-file) (str "guest not found at " guest-file)))
 
 (deftest generate-header-parity
   (testing "the guest's header is byte-identical to the oracle's"
